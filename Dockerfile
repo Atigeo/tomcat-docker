@@ -8,9 +8,9 @@
 
 # ---- Version control ----
 
-FROM xpatterns/java:7u79
+FROM xpatterns/java:8u65
 
-ENV TOMCAT_VERSION 8.0.26
+ENV TOMCAT_VERSION 8.0.33
 
 
 # ---- Download Links ----

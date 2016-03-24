@@ -10,7 +10,7 @@
 
 FROM xpatterns/java:8u65
 
-ENV TOMCAT_VERSION 8.0.33
+ENV TOMCAT_VERSION 8.0.32
 
 
 # ---- Download Links ----

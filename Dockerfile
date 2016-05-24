@@ -10,7 +10,7 @@
 
 FROM xpatterns/java:8u65
 
-ENV TOMCAT_VERSION 8.0.32
+ENV TOMCAT_VERSION 8.0.35
 
 
 # ---- Download Links ----
@@ -23,6 +23,10 @@ ENV TOMCAT_DOWNLOAD_LINK https://s3.amazonaws.com/xpatterns/dependencies/tomcat/
 ENV USER tomcat
 ENV TOMCAT_HOME /usr/local/apache-tomcat
 
+ENV JAVA_XMS 1g
+ENV JAVA_XMX 1g
+ENV JAVA_PERM 1g
+ENV JAVA_MAX_PERM 1g
 
 # ---- Ports ----
 
@@ -45,6 +49,8 @@ RUN mv /tmp/apache-tomcat* ${TOMCAT_HOME}
 RUN chown -R ${USER}:${USER} ${TOMCAT_HOME}
 
 RUN update-alternatives --install "/bin/catalina" "catalina" "$TOMCAT_HOME/bin/catalina.sh" 1
+
+COPY conf/catalina.sh ${TOMCAT_HOME}/bin/
 
 
 # ---- Copy scripts  ----
